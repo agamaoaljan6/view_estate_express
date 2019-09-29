@@ -1,9 +1,6 @@
 const express = require('express');
-const rootRouter = require('./routes');
 const app = express();
-const router = express.Router();
 
-
-// router.route('/').post('/signin', usersController);
-
-app.listen(3000, 'localhost')
+app.listen(3000, 'localhost', () => {
+    console.log(`listening to http://localhost:3000`)
+})
