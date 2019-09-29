@@ -1,0 +1,32 @@
+{
+  "name": "view_estate_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaylyn2007/view_estate_express.git"
+  },
+  "author": "Kaylyn Kwak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaylyn2007/view_estate_express/issues"
+  },
+  "homepage": "https://github.com/kaylyn2007/view_estate_express#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "pg-query-stream": "^2.0.0",
+    "sequelize": "^2.0.0-rc8",
+    "sequelize-cli": "^5.5.1",
+    "sqlite3": "^4.1.0",
+    "url-parse": "^1.4.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
