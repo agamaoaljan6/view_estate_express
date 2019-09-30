@@ -19,7 +19,7 @@
               <option value="coquitlam">Coquitlam</option>
               <option value="burnaby">Burnaby</option>
             </select>
-            <select name="rentsale" id="rentsale">
+            <select name="rent-sale" id="rent-sale">
               <option value="rent">For Rent</option>
               <option value="sale">For Sale</option>
             </select>
@@ -69,20 +69,65 @@
     <section class="featured">
       <h1>Featured Properties</h1>
       <div class="properties">
-       <carousel>
-
-    <img src="../assets/img1.jpg">
-    <img src="../assets/img1.jpg">
-    <img src="../assets/img1.jpg">
-    <img src="../assets/img1.jpg">
-</carousel>
+        <div class="card">
+          <carousel :data="featured" indicators="hover" indicator-type="disc"></carousel>
+          <div class="container">
+            <h4>
+              <b>3533 Meadow Drive, Vancouver BC</b>
+            </h4>
+            <p>Architect & Engineer</p>
+            <p>550 SqFt</p>
+            <p>6 Bedrooms | 2 Bathrooms</p>
+            <p>
+              <button class="button">Details</button>
+            </p>
+            <br />
+          </div>
+        </div>
+        <div class="card">
+          <carousel :data="featured" indicators="hover" indicator-type="disc"></carousel>
+          <div class="container">
+            <h4>
+              <b>3533 Meadow Drive, Vancouver BC</b>
+            </h4>
+            <p>Architect & Engineer</p>
+            <p>550 SqFt</p>
+            <p>6 Bedrooms | 2 Bathrooms</p>
+            <p>
+              <button class="button">Details</button>
+            </p>
+            <br />
+          </div>
+        </div>
+        <div class="card">
+          <carousel :data="featured" indicators="hover" indicator-type="disc"></carousel>
+          <div class="container">
+            <h4>
+              <b>3533 Meadow Drive, Vancouver BC</b>
+            </h4>
+            <p>Architect & Engineer</p>
+            <p>550 SqFt</p>
+            <p>6 Bedrooms | 2 Bathrooms</p>
+            <p>
+              <button class="button">Details</button>
+            </p>
+            <br />
+          </div>
+        </div>
       </div>
+      <div class="property-btn">
+        <button class="property-button">View all properties</button>
+      </div>
+    </section>
+
+    <section class="services">
+      <h1>What we Offer</h1>
+      <div class="service"></div>
     </section>
   </main>
 </template>
 
 <script>
-import carousel from 'vue-owl-carousel'
 export default {
   data() {
     return {
@@ -91,9 +136,11 @@ export default {
         '<div class="example-slide-2"><h1>2836 Pride Avenue, Surrey BC</h1></div>',
         '<div class="example-slide-3"><h1>3376 Norman Street, Burnaby BC</h1></div>'
       ],
-      components: {
-        carousel
-      }
+      featured: [
+        '<div class="example-slide"></div>',
+        '<div class="example-slide">  </div>',
+        '<div class="example-slide"></div>'
+      ]
     };
   }
 };
@@ -126,6 +173,19 @@ body {
   justify-content: center;
   min-height: 82vh;
 }
+.example-slide {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../assets/img1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+}
+
 .example-slide-1 {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../assets/img1.jpg");
@@ -149,14 +209,16 @@ fieldset {
   border: 0;
 }
 .search h1,
-.featured h1 {
+.featured h1,
+.services h1 {
   line-height: 20px;
   padding: 2%;
   margin: 2em 0 auto;
   text-transform: uppercase;
   font-size: 30px;
 }
-.search {
+.search,
+.services {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,15 +248,44 @@ fieldset {
   font-size: 1em;
   transition: all 0.3s ease-in-out;
 }
-.button:hover {
+.property-button {
+  border: none;
+  padding: 0.5em 2em;
+  color: #333;
+  border-radius: 3px;
+  width: 15vw;
+  text-align: center;
+  font-size: 1em;
+  transition: all 0.3s ease-in-out;
+}
+.button:hover,
+.property-button:hover {
   background: #333;
   color: #fff;
 }
+.property-btn {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
 
 .properties {
-  display: grid; 
+  padding: 2%;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px; 
-  padding: 5%;
+  grid-gap: 30px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  height: 50%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
 }
 </style>
