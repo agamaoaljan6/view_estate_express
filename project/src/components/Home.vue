@@ -65,10 +65,24 @@
         </div>
       </fieldset>
     </section>
+
+    <section class="featured">
+      <h1>Featured Properties</h1>
+      <div class="properties">
+       <carousel>
+
+    <img src="../assets/img1.jpg">
+    <img src="../assets/img1.jpg">
+    <img src="../assets/img1.jpg">
+    <img src="../assets/img1.jpg">
+</carousel>
+      </div>
+    </section>
   </main>
 </template>
 
 <script>
+import carousel from 'vue-owl-carousel'
 export default {
   data() {
     return {
@@ -76,7 +90,10 @@ export default {
         '<div class="example-slide-1"><h1>3533 Meadow Drive, Vancouver BC</h1></div>',
         '<div class="example-slide-2"><h1>2836 Pride Avenue, Surrey BC</h1></div>',
         '<div class="example-slide-3"><h1>3376 Norman Street, Burnaby BC</h1></div>'
-      ]
+      ],
+      components: {
+        carousel
+      }
     };
   }
 };
@@ -131,9 +148,11 @@ fieldset {
   padding: 3%;
   border: 0;
 }
-.search h1 {
-  line-height: 30px;
-  margin: 3em 0 auto;
+.search h1,
+.featured h1 {
+  line-height: 20px;
+  padding: 2%;
+  margin: 2em 0 auto;
   text-transform: uppercase;
   font-size: 30px;
 }
@@ -143,6 +162,7 @@ fieldset {
   align-items: center;
   flex-direction: column;
   background: rgb(233, 233, 233);
+  margin-top: 3.5em;
 }
 .inputs {
   display: grid;
@@ -169,5 +189,12 @@ fieldset {
 .button:hover {
   background: #333;
   color: #fff;
+}
+
+.properties {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px; 
+  padding: 5%;
 }
 </style>

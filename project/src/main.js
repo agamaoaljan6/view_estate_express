@@ -5,7 +5,6 @@ import App from "./App";
 import router from "./router";
 // import './../node_modules/bulma/css/bulma.css';
 import VueCarousel from "@chenfengyuan/vue-carousel";
-
 Vue.use(VueCarousel);
 Vue.config.productionTip = false;
 
