@@ -1,10 +1,9 @@
 <template>
   <main class="home">
     <div class="header">
-      <img src="../assets/logo.png" alt width="50" height="50" />
       <h1>FREE REAL ESTATE</h1>
     </div>
-    <carousel :data="data" indicators="hover" indicator-type="disc"></carousel>
+    <carousel :data="data" class="main-carousel" indicators="hover" indicator-type="disc"></carousel>
 
     <section class="search">
       <h1>Check our listing</h1>
@@ -79,7 +78,7 @@
             <p>550 SqFt</p>
             <p>6 Bedrooms | 2 Bathrooms</p>
             <p>
-              <button class="button">Details</button>
+              <button class="feature-button">Details</button>
             </p>
             <br />
           </div>
@@ -94,7 +93,7 @@
             <p>550 SqFt</p>
             <p>6 Bedrooms | 2 Bathrooms</p>
             <p>
-              <button class="button">Details</button>
+              <button class="feature-button">Details</button>
             </p>
             <br />
           </div>
@@ -109,7 +108,7 @@
             <p>550 SqFt</p>
             <p>6 Bedrooms | 2 Bathrooms</p>
             <p>
-              <button class="button">Details</button>
+              <button class="feature-button">Details</button>
             </p>
             <br />
           </div>
@@ -155,7 +154,7 @@
               <p>550 SqFt</p>
               <p>6 Bedrooms | 2 Bathrooms</p>
               <p>
-                <button class="button">Details</button>
+                <button class="feature-button">Details</button>
               </p>
               <br />
             </div>
@@ -272,7 +271,7 @@
                 <p>Subscribe to our newsletter</p>
               </label>
               <input class="footer-input" id="email" type="email" placeholder="Email" />
-              <input class="footer-button" type="submit" />
+              <input class="feature-button" type="submit" />
             </div>
           </div>
         </div>
@@ -286,13 +285,13 @@ export default {
   data() {
     return {
       data: [
-        '<div class="example-slide-1"><h1>3533 Meadow Drive, Vancouver BC</h1></div>',
+        '<div class="example-slide-1"> <a href="https://www.google.com"> <h1>3533 Meadow Drive, Vancouver BC</h1></a> </div>',
         '<div class="example-slide-2"><h1>2836 Pride Avenue, Surrey BC</h1></div>',
         '<div class="example-slide-3"><h1>3376 Norman Street, Burnaby BC</h1></div>'
       ],
       featured: [
         '<div class="example-slide"></div>',
-        '<div class="example-slide">  </div>',
+        '<div class="example-slide"></div>',
         '<div class="example-slide"></div>'
       ]
     };
@@ -302,6 +301,150 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Proza+Libre");
+@media only screen and (max-width: 812px) {
+  .home h1 {
+    margin-left: 0.7em;
+    font-size: 26px;
+  }
+  .header img {
+    display: none;
+  }
+  .main-carousel {
+    padding: 5%;
+  }
+  .agents {
+    padding: 0 !important;
+  }
+  .example-slide-1 h1,
+  .example-slide-2 h1,
+  .example-slide-3 h1 {
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .inputs input,
+  .inputs select {
+    height: 5vh;
+    width: 25vw !important;
+  }
+  .button {
+    border: 1px solid #333;
+    padding: 0.5em 1.5em;
+    color: #333;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 1em;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .properties {
+    padding: 5%;
+    display: grid;
+    grid-template-columns: 1fr !important;
+    grid-gap: 10px !important;
+  }
+  .container h4 {
+    text-align: center;
+  }
+  .container {
+    height: 35vh;
+  }
+  .property-button {
+    border: 1px solid #333;
+    margin-top: 2em;
+    padding: 0.5em 2em;
+    color: #333;
+    border-radius: 3px;
+    width: 53vw !important;
+    text-align: center;
+    font-size: 1em;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .service-container {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    grid-gap: 0px !important;
+    padding: 5%;
+  }
+  .service-description {
+    padding: 5%;
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .service-description p {
+    text-align: center;
+  }
+  .service-container h3 {
+    /* margin-top: 2em; */
+    text-align: center;
+  }
+  .agent {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    padding: 2%;
+    grid-gap: 10px;
+  }
+
+  .footer-content {
+    display: flex !important;
+    flex-direction: column;
+    line-height: 15px;
+  }
+  .footer-icons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0.5em;
+  }
+  .feature-button,
+  .property-button {
+    border: 1px solid #333;
+    padding: 0.5em 2em;
+    color: #333;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+  }
+  .example-slide-1,
+  .example-slide-2,
+  .example-slide-3 {
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    min-height: 50vh !important;
+  }
+  .example-slide {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../assets/img1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    height: 30vh !important;
+  }
+  .agents h1 {
+    line-height: 20px;
+    padding: 2%;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 1em;
+  }
+}
+
+/* END OF MEDIA QUERIES */
 
 body {
   background-color: rgb(244, 244, 244);
@@ -310,7 +453,6 @@ body {
 .header {
   display: flex;
   justify-content: space-around;
-  margin-right: 25%;
 }
 .home {
   margin-top: 2em;
@@ -329,6 +471,12 @@ body {
   font-size: 1.5rem;
   justify-content: center;
   min-height: 82vh;
+}
+.example-slide-1 a,
+.example-slide-2 a,
+.example-slide-3 a {
+  text-decoration: none; 
+  color: #fff;
 }
 .example-slide {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -403,30 +551,29 @@ fieldset {
   height: 5vh;
   width: 20vw;
 }
-.button,
-.footer-button {
+.button {
   border: 1px solid #333;
-  padding: 0.5em 1.5em;
   color: #333;
   border-radius: 3px;
-  width: 10vw;
-  text-align: center;
+  width: 90px;
+
   font-size: 1em;
   transition: all 0.3s ease-in-out;
 }
+.feature-button,
 .property-button {
   border: 1px solid #333;
   padding: 0.5em 2em;
   color: #333;
   border-radius: 3px;
-  width: 15vw;
+  /* width: 7vw; */
   text-align: center;
   font-size: 1em;
   transition: all 0.3s ease-in-out;
 }
 .button:hover,
 .property-button:hover,
-.footer-button:hover {
+.feature-button:hover {
   background: #333;
   color: #fff;
 }
@@ -464,6 +611,10 @@ fieldset {
 .service-container h3 {
   margin-top: 2em;
 }
+
+.service-description p {
+  text-align: center;
+}
 .service-description {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -476,7 +627,8 @@ fieldset {
 .fa-icon {
   font-size: 30px;
   color: rgb(20, 20, 20);
-  margin-left: 2.7em;
+  margin: 0 auto;
+  display: flex;
 }
 
 .agent {

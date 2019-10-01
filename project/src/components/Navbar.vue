@@ -1,6 +1,6 @@
 <template>
-  <div class="nav">
-    <Slide right>
+  <div >
+    <Slide class="nav">
       <a href>
         <span>Home</span>
       </a>
@@ -50,5 +50,20 @@ html {
   text-align: center;
   background: #333;
   width: 143px;
+}
+.nav {
+  margin-left: 3em;
+}
+
+@media only screen and (max-width: 812px) {
+  
+.bm-burger-button {
+    cursor: pointer;
+    height: 30px;
+    left: 20px !important;
+    position: absolute;
+    top: 36px;
+    width: 36px;
+}
 }
 </style>
