@@ -475,7 +475,7 @@ body {
 .example-slide-1 a,
 .example-slide-2 a,
 .example-slide-3 a {
-  text-decoration: none; 
+  text-decoration: none;
   color: #fff;
 }
 .example-slide {
@@ -488,7 +488,7 @@ body {
   color: #fff;
   display: flex;
   justify-content: center;
-  height: 50vh;
+  height: 40vh;
 }
 
 .example-slide-1 {
@@ -586,7 +586,8 @@ fieldset {
 .properties {
   padding: 2%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  grid-template-columns: 500px minmax(auto, 500px) 500px;
   grid-gap: 30px;
 }
 .card {
@@ -598,13 +599,13 @@ fieldset {
   padding: 2px 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  line-height: 10px;
 }
 
 .service-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 800px minmax(500px, auto);
   grid-gap: 50px;
   padding: 5%;
 }
